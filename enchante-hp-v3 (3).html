@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enchanté'-Hair | メンズ専門理容室 | 京都・亀岡</title>
+<meta name="description" content="京都府亀岡市のメンズ専門理容室。散髪屋4代目が作る、オトナ男子の隠れ家BARBER。再現性カット×エステシェーブ×フットマッサージ。JR千代川駅徒歩3分。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════ VARIABLES ═══════════ */
+:root {
+  /* Light base — 10% darker than v2 */
+  --cream: #ece8df;
+  --cream-warm: #e4dfd5;
+  --cream-deep: #d9d3c7;
+  --white: #f3f1ec;
+
+  /* Dark accents */
+  --chalk: #2c3830;
+  --chalk-light: #3a4a42;
+  --black: #0b0f0d;
+
+  /* Gold */
+  --gold: #b8952e;
+  --gold-light: #d4af37;
+  --gold-pale: #f5e6b8;
+  --gold-dim: rgba(184,149,46,0.10);
+
+  /* Text */
+  --text: #2c3830;
+  --text-light: #4a5650;
+  --text-dim: #7a8580;
+  --text-on-dark: #e4e0d8;
+  --text-dim-on-dark: #8a9490;
+
+  /* Borders */
+  --border: #cdc7bb;
+  --border-dark: #2a3530;
+
+  --radius: 4px;
+  --line-green: #06C755;
+}
+
+/* ═══════════ RESET ═══════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Zen Kaku Gothic New','Noto Serif JP',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;border:none;cursor:pointer;background:none}
+
+/* ═══════════ UTILITY ═══════════ */
+.section-padding{padding:5rem 1.5rem}
+.section-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem}
+.section-title{font-family:'Cinzel',serif;font-size:1.6rem;font-weight:500;letter-spacing:.08em;line-height:1.4;margin-bottom:.4rem;color:var(--text)}
+.section-title.on-dark{color:#fff}
+.section-title-jp{font-family:'Noto Serif JP',serif;font-size:.8rem;font-weight:300;color:var(--text-dim);letter-spacing:.15em;margin-bottom:2rem}
+.container{max-width:960px;margin:0 auto}
+.gold-line{width:40px;height:1.5px;background:var(--gold);margin:1.5rem 0}
+.gold-line.center{margin:1.5rem auto}
+
+/* ═══════════ FADE IN ═══════════ */
+.fi{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fi.v{opacity:1;transform:translateY(0)}
+.fi-d1{transition-delay:.1s}.fi-d2{transition-delay:.2s}.fi-d3{transition-delay:.3s}
+
+/* ═══════════ NAV ═══════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,backdrop-filter .4s}
+.nav.scrolled{background:rgba(236,232,223,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.04)}
+.nav.scrolled .nav-logo{color:var(--chalk)}
+.nav-logo{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.2em;color:#fff;transition:color .4s}
+.nav-logo span{display:block;font-size:.5rem;letter-spacing:.3em;color:var(--gold);font-weight:400}
+.nav-cta{background:var(--gold);color:#fff;padding:.5rem 1.2rem;border-radius:100px;font-size:.72rem;font-weight:500;letter-spacing:.08em;transition:all .2s}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* ═══════════ HERO (dark) ═══════════ */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 1.5rem 2rem;overflow:hidden}
+.hero-video-wrap{position:absolute;inset:0;z-index:0}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover}
+.hero-video-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,15,13,.25) 0%,rgba(11,15,13,.55) 50%,rgba(11,15,13,.92) 100%)}
+.hero-poster{position:absolute;inset:0;background:var(--black);background-image:url('https://static.wixstatic.com/media/8ba8e4_1b5bc8bc45fe4d149912b87a57390ee7~mv2.jpg/v1/fill/w_1920,h_1536,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/8ba8e4_1b5bc8bc45fe4d149912b87a57390ee7~mv2.jpg');background-size:cover;background-position:center}
+.hero-content{position:relative;z-index:2;max-width:600px}
+.hero-brand{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:500;letter-spacing:.12em;line-height:1.2;color:#fff}
+.hero-brand small{display:block;font-size:.65rem;letter-spacing:.4em;color:var(--gold);font-weight:400;margin-top:.3rem}
+.hero-tagline{font-family:'Noto Serif JP',serif;font-size:.82rem;font-weight:300;color:var(--text-on-dark);line-height:2;margin-top:1rem;letter-spacing:.08em}
+.hero-actions{display:flex;gap:.6rem;margin-top:1.5rem;flex-wrap:wrap}
+.btn-line{display:inline-flex;align-items:center;gap:.5rem;background:var(--line-green);color:#fff;padding:.7rem 1.6rem;border-radius:100px;font-size:.82rem;font-weight:500;transition:all .2s}
+.btn-line:hover{background:#05b34c}
+.btn-line svg{width:18px;height:18px;fill:#fff}
+.btn-tel{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(255,255,255,.25);color:var(--text-dim-on-dark);padding:.7rem 1.4rem;border-radius:100px;font-size:.78rem;transition:all .2s}
+.btn-tel:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── HERO: 空き状況パネル ── */
+.hero-avail{position:relative;z-index:2;margin-top:1.5rem;background:rgba(243,241,236,.92);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.avail-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.avail-title{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.avail-link{font-size:.65rem;color:var(--text-dim);border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s}
+.avail-link:hover{color:var(--gold)}
+.avail-slots{display:flex;flex-direction:column;gap:.35rem}
+.avail-day{display:flex;align-items:center;gap:.6rem;font-size:.78rem}
+.avail-date{font-family:'Cinzel',serif;min-width:90px;color:var(--text);font-weight:500;letter-spacing:.05em}
+.avail-date.holiday{color:#dc4040}
+.avail-times{color:var(--text-dim);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.avail-times.closed{color:#dc4040}
+.avail-loading{text-align:center;padding:1rem;color:var(--text-dim);font-size:.75rem}
+.avail-dot{width:5px;height:5px;border-radius:50%;background:#2d9d5a;flex-shrink:0}
+.avail-dot.full{background:#dc4040}
+.avail-dot.closed{background:var(--text-dim)}
+
+/* ═══════════ CONCEPT ═══════════ */
+.concept{background:var(--cream);text-align:center}
+.concept-quote{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--gold);line-height:1.8;margin-bottom:1.5rem;letter-spacing:.04em}
+.concept-body{font-family:'Noto Serif JP',serif;font-size:.82rem;font-weight:300;line-height:2.4;color:var(--text-light);max-width:560px;margin:0 auto}
+.concept-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.pillar{text-align:center;padding:1.5rem 1rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--white);transition:border-color .3s,box-shadow .3s}
+.pillar:hover{border-color:var(--gold-dim);box-shadow:0 2px 12px rgba(184,149,46,.08)}
+.pillar-num{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.3em;color:var(--gold);display:block;margin-bottom:.5rem}
+.pillar-title{font-family:'Noto Serif JP',serif;font-size:.85rem;font-weight:500;margin-bottom:.3rem}
+.pillar-sub{font-size:.65rem;color:var(--text-dim)}
+@media(max-width:600px){.concept-pillars{grid-template-columns:1fr}}
+
+/* ═══════════ MENU (chalk) ═══════════ */
+.menu{background:var(--chalk);color:var(--text-on-dark)}
+.menu .section-label{color:var(--gold-light)}
+.menu .gold-line{background:var(--gold-light)}
+.menu-group{margin-bottom:2.5rem}
+.menu-group-title{font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.2em;color:var(--gold-light);border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:.6rem;margin-bottom:1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.menu-item:last-child{border-bottom:none}
+.menu-name{font-family:'Noto Serif JP',serif;font-size:.82rem;font-weight:400;color:var(--text-on-dark)}
+.menu-name small{display:block;font-size:.65rem;color:var(--text-dim-on-dark);font-weight:300;margin-top:.15rem}
+.menu-price{font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold-light);white-space:nowrap;margin-left:1rem;letter-spacing:.05em}
+.menu-note{font-size:.65rem;color:var(--text-dim-on-dark);font-style:italic;margin-top:.3rem;line-height:1.6}
+.member-badge{display:inline-block;font-size:.55rem;padding:.15rem .5rem;border-radius:100px;letter-spacing:.08em;margin-right:.4rem;font-weight:500}
+.member-badge.gold{background:rgba(212,175,55,.2);color:var(--gold-light)}
+.member-badge.silver{background:rgba(200,200,200,.15);color:#ccc}
+.member-badge.standard{background:rgba(255,255,255,.08);color:var(--text-dim-on-dark)}
+
+/* ═══════════ INSTAGRAM ═══════════ */
+.instagram{background:var(--cream-warm)}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:2rem}
+.ig-item{position:relative;aspect-ratio:1;overflow:hidden;border-radius:6px;cursor:pointer}
+.ig-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.ig-item:hover img{transform:scale(1.06)}
+.ig-follow{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:2rem}
+.ig-follow a{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);color:var(--text);padding:.65rem 1.8rem;border-radius:100px;font-size:.78rem;font-weight:500;letter-spacing:.05em;transition:all .2s}
+.ig-follow a:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:600px){.ig-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══════════ GALLERY (dark bg + ornate frames) ═══════════ */
+.gallery{background:var(--chalk);padding:5rem 1.5rem}
+.gallery .section-title{color:#fff}
+.gallery .section-label{color:var(--gold-light)}
+.gallery .gold-line{background:var(--gold-light)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:2rem;max-width:1100px;margin-left:auto;margin-right:auto}
+
+/* Ornate frame */
+.gallery-frame{position:relative;cursor:pointer;transition:transform .3s ease}
+.gallery-frame:hover{transform:scale(1.03)}
+.gallery-frame-inner{position:relative;aspect-ratio:1;overflow:hidden;border:3px solid #8a7a5a;box-shadow:0 0 0 1px #5a4a2a,0 0 0 6px #3a3428,0 0 0 7px #8a7a5a,0 4px 16px rgba(0,0,0,.5);border-radius:2px}
+.gallery-frame-inner img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gallery-frame:hover .gallery-frame-inner img{transform:scale(1.1)}
+/* Corner ornaments */
+.gallery-frame-inner::before,.gallery-frame-inner::after{content:'❧';position:absolute;font-size:14px;color:#8a7a5a;z-index:2;opacity:.7;pointer-events:none}
+.gallery-frame-inner::before{top:4px;left:6px}
+.gallery-frame-inner::after{bottom:4px;right:6px;transform:rotate(180deg)}
+.gallery-caption{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:var(--text-dim-on-dark);text-align:center;margin-top:.8rem;text-transform:uppercase}
+
+@media(max-width:768px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
+@media(max-width:420px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:1rem}}
+
+/* ═══════════ LIGHTBOX ═══════════ */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(11,15,13,.92);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease}
+.lightbox.active{display:flex;opacity:1}
+.lightbox-frame{position:relative;max-width:80vw;max-height:80vh;border:4px solid #8a7a5a;box-shadow:0 0 0 2px #5a4a2a,0 0 0 8px #3a3428,0 0 0 9px #8a7a5a,0 8px 40px rgba(0,0,0,.6);border-radius:2px}
+.lightbox-frame::before,.lightbox-frame::after{content:'❧';position:absolute;font-size:20px;color:#8a7a5a;z-index:2;opacity:.6}
+.lightbox-frame::before{top:8px;left:10px}
+.lightbox-frame::after{bottom:8px;right:10px;transform:rotate(180deg)}
+.lightbox-frame img{display:block;max-width:80vw;max-height:80vh;object-fit:contain}
+.lightbox-close{position:absolute;top:-40px;right:-10px;color:#fff;font-size:1.5rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.lightbox-close:hover{color:var(--gold)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;padding:1rem;transition:color .2s;user-select:none;-webkit-user-select:none}
+.lightbox-nav:hover{color:var(--gold)}
+.lightbox-nav.prev{left:1rem}
+.lightbox-nav.next{right:1rem}
+.lightbox-counter{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);font-family:'Cinzel',serif;font-size:.7rem;color:var(--text-dim-on-dark);letter-spacing:.2em}
+.lightbox-caption{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);font-family:'Cinzel',serif;font-size:.75rem;color:#fff;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+
+/* ═══════════ PRODUCTS ═══════════ */
+.products{background:var(--white)}
+.product-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.product-card{border:1px solid var(--border);border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;background:var(--cream);transition:border-color .3s,box-shadow .3s}
+.product-card:hover{border-color:rgba(184,149,46,.3);box-shadow:0 4px 16px rgba(184,149,46,.06)}
+.product-num{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.3em;color:var(--gold);margin-bottom:.8rem}
+.product-name{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:500;margin-bottom:.3rem}
+.product-brand{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:var(--text-dim);margin-bottom:.8rem}
+.product-desc{font-size:.75rem;color:var(--text-dim);line-height:1.8;margin-bottom:1rem}
+.product-price{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);letter-spacing:.05em}
+
+/* ═══════════ VOICE ═══════════ */
+.voice{background:var(--cream-warm)}
+.voice-cards{display:grid;gap:1.5rem;margin-top:2rem}
+.voice-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.8rem;position:relative}
+.voice-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:3rem;position:absolute;top:.5rem;left:1rem;line-height:1;color:var(--gold);opacity:.2}
+.voice-stars{color:var(--gold);font-size:.7rem;letter-spacing:.15em;margin-bottom:.6rem}
+.voice-text{font-family:'Noto Serif JP',serif;font-size:.82rem;font-weight:300;line-height:2;color:var(--text);padding-left:.5rem}
+.voice-meta{display:flex;align-items:center;gap:.5rem;margin-top:1rem;padding-left:.5rem}
+.voice-badge{font-size:.55rem;padding:.15rem .5rem;border-radius:100px;letter-spacing:.05em}
+.voice-badge.gold{background:rgba(184,149,46,.12);color:var(--gold)}
+.voice-badge.silver{background:rgba(130,130,130,.12);color:#888}
+.voice-who{font-size:.7rem;color:var(--text-dim)}
+
+/* ═══════════ STYLIST ═══════════ */
+.stylist{background:var(--cream)}
+.stylist-inner{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center}
+.stylist-img{width:200px;height:200px;border-radius:50%;overflow:hidden;border:2px solid var(--border)}
+.stylist-img img{width:100%;height:100%;object-fit:cover}
+.stylist-name{font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:500}
+.stylist-name-en{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;color:var(--gold);margin-top:.2rem}
+.stylist-bio{font-size:.78rem;color:var(--text-light);line-height:2;margin-top:.8rem}
+@media(max-width:600px){.stylist-inner{grid-template-columns:1fr;text-align:center}.stylist-img{margin:0 auto}}
+
+/* ═══════════ FAQ ═══════════ */
+.faq{background:var(--white)}
+.faq-list{margin-top:2rem}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;align-items:center;gap:.8rem;padding:1.2rem 0;cursor:pointer;width:100%;text-align:left;color:var(--text);font-size:.85rem;font-weight:400;transition:color .2s}
+.faq-q:hover{color:var(--gold)}
+.faq-q .q-mark{font-family:'Cinzel',serif;font-size:.75rem;color:var(--gold);font-weight:600;flex-shrink:0;width:24px}
+.faq-q .q-text{flex:1}
+.faq-q .q-arrow{color:var(--text-dim);font-size:.7rem;transition:transform .3s;flex-shrink:0}
+.faq-item.open .q-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:300px;padding:0 0 1.2rem 2rem}
+.faq-a p{font-size:.78rem;color:var(--text-light);line-height:2}
+
+/* ═══════════ NEWS ═══════════ */
+.news{background:var(--cream-warm)}
+.news-list{margin-top:2rem}
+.news-item{display:flex;gap:1rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--border)}
+.news-item:last-child{border-bottom:none}
+.news-date{font-family:'Cinzel',serif;font-size:.7rem;color:var(--text-dim);white-space:nowrap;min-width:80px;letter-spacing:.05em}
+.news-tag{font-size:.55rem;padding:.15rem .5rem;border-radius:100px;border:1px solid var(--border);color:var(--text-dim);white-space:nowrap}
+.news-text{font-size:.82rem;color:var(--text)}
+
+/* ═══════════ LINE CTA ═══════════ */
+.line-cta{background:var(--cream-deep);text-align:center;padding:4rem 1.5rem;position:relative}
+.line-cta::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.line-cta-title{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:400;letter-spacing:.12em;margin-bottom:.6rem}
+.line-cta-sub{font-size:.72rem;color:var(--text-dim);margin-bottom:1.5rem;line-height:1.8}
+.line-cta .btn-line{font-size:.9rem;padding:.85rem 2.5rem}
+.line-qr{margin-top:1.5rem}
+.line-qr p{font-size:.6rem;color:var(--text-dim);margin-top:.5rem;letter-spacing:.1em}
+
+/* ═══════════ ACCESS ═══════════ */
+.access{background:var(--cream)}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.access-info dt{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-top:1.2rem}
+.access-info dt:first-child{margin-top:0}
+.access-info dd{font-size:.82rem;color:var(--text);line-height:1.8;margin-top:.3rem}
+.access-map{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--border)}
+.access-map iframe{width:100%;height:100%;border:none}
+@media(max-width:600px){.access-grid{grid-template-columns:1fr}}
+
+/* ═══════════ FOOTER CTA (chalk) ═══════════ */
+.footer-cta{background:var(--chalk);text-align:center;padding:4rem 1.5rem}
+.footer-cta-title{font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:300;letter-spacing:.1em;margin-bottom:.3rem;color:#fff}
+.footer-cta-sub{font-size:.72rem;color:var(--text-dim-on-dark);margin-bottom:2rem}
+.footer-cta .btn-line{font-size:.9rem;padding:.85rem 2.5rem}
+
+/* ═══════════ FOOTER ═══════════ */
+footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2.5rem 1.5rem;text-align:center}
+.footer-logo{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.2em;color:var(--gold)}
+.footer-address{font-size:.65rem;color:var(--text-dim-on-dark);margin-top:.6rem;line-height:1.8}
+.footer-copy{font-size:.55rem;color:var(--text-dim-on-dark);margin-top:1.5rem;letter-spacing:.1em}
+
+/* ═══════════ BOOKING BAR ═══════════ */
+.booking-bar{position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(236,232,223,.96);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:.6rem 1rem;display:flex;gap:.5rem;align-items:center;transform:translateY(100%);transition:transform .4s ease}
+.booking-bar.show{transform:translateY(0)}
+.booking-bar .btn-line{flex:1;justify-content:center;padding:.65rem;font-size:.8rem;border-radius:10px}
+.booking-bar .btn-tel{padding:.65rem 1rem;border-radius:10px;font-size:.75rem;color:var(--text);border-color:var(--border)}
+
+@media(min-width:769px){
+  .section-padding{padding:6rem 3rem}
+  .hero{padding:0 3rem 3rem}
+  .hero-brand{font-size:3.2rem}
+  .section-title{font-size:2rem}
+  .booking-bar{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">ENCHANTÉ'<span>Cut &amp; Shave — Kameoka, Kyoto</span></div>
+  <a href="https://line.me/R/ti/p/@kbs5076i" class="nav-cta">LINE 予約</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-video-wrap">
+    <div class="hero-poster"></div>
+  </div>
+  <div class="hero-content fi">
+    <h1 class="hero-brand">ENCHANTÉ'<small>Barber Shop — Est. 2002</small></h1>
+    <p class="hero-tagline">「この店に来たら、また明日から頑張れる！」<br>京都・亀岡　オトナ男子の隠れ家BARBER</p>
+    <div class="hero-actions">
+      <a href="https://line.me/R/ti/p/@kbs5076i" class="btn-line"><svg viewBox="0 0 24 24"><path d="M19.365 9.89c.50 0 .907.408.907.91 0 .502-.407.91-.907.91H17.71v1.04h1.655c.50 0 .907.407.907.91s-.407.91-.907.91H16.8a.91.91 0 0 1-.907-.91V9.89c0-.502.407-.91.907-.91h2.565zm-5.577 3.771a.91.91 0 0 1-.652.276.908.908 0 0 1-.65-.276L10.65 11.84v1.82a.91.91 0 0 1-1.817 0V9.89c0-.352.2-.67.516-.823.316-.152.69-.108.963.11l1.835 1.54V9.89a.91.91 0 1 1 1.818 0v3.77zm-5.847.182a.91.91 0 0 1-1.818 0V9.89a.91.91 0 0 1 1.818 0v3.952zm-3.306.182H3.08a.91.91 0 0 1-.908-.91V9.89a.91.91 0 0 1 1.818 0v3.042h.652c.50 0 .908.407.908.91s-.407.91-.908.91zM12 2C6.477 2 2 6.24 2 11.47c0 4.61 3.868 8.47 9.088 9.29.354.06.835.19.956.43.11.22.072.56.035.78l-.154.943c-.047.27-.218 1.06.929.578 1.148-.48 6.19-3.644 8.45-6.24C22.736 15.1 22 13.37 22 11.47 22 6.24 17.523 2 12 2z"/></svg>LINE で予約</a>
+      <a href="tel:0771245339" class="btn-tel">☎ 0771-24-5339</a>
+    </div>
+  </div>
+  <div class="hero-avail fi fi-d2" id="availPanel">
+    <div class="avail-header"><span class="avail-title">Availability</span><a href="https://newtype3104-byte.github.io/portal/" class="avail-link">すべて見る →</a></div>
+    <div class="avail-slots" id="availSlots"><div class="avail-loading" id="availLoading">空き状況を取得中...</div></div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept section-padding" id="concept">
+  <div class="container">
+    <div class="fi"><p class="section-label">Concept</p><h2 class="section-title">Philosophy</h2><div class="gold-line center"></div></div>
+    <p class="concept-quote fi fi-d1">"真面目に生きる中で、<br>どこか不真面目でもいい。"</p>
+    <p class="concept-body fi fi-d2">英国パブ × スポーツBAR × BARBER。<br>散髪屋の4代目が作る、昭和の懐かしさとカッコよさが同居する空間。<br>1対1だから、周りを気にせず自分だけの時間を過ごせる。<br>仕事帰りでも立ち寄れる21時まで営業。</p>
+    <div class="concept-pillars">
+      <div class="pillar fi fi-d1"><span class="pillar-num">01</span><p class="pillar-title">4代目の技術</p><p class="pillar-sub">Heritage</p></div>
+      <div class="pillar fi fi-d2"><span class="pillar-num">02</span><p class="pillar-title">癒しの空間</p><p class="pillar-sub">Relaxation</p></div>
+      <div class="pillar fi fi-d3"><span class="pillar-num">03</span><p class="pillar-title">男の隠れ家</p><p class="pillar-sub">Man Cave</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu section-padding" id="menu">
+  <div class="container">
+    <div class="fi"><p class="section-label">Service Menu</p><h2 class="section-title on-dark">Menu</h2><div class="gold-line"></div></div>
+    <div class="menu-group fi"><h3 class="menu-group-title">Hair Cut</h3><div class="menu-item"><span class="menu-name">カット＋スタイリング</span><span class="menu-price">¥3,500</span></div><div class="menu-item"><span class="menu-name">カット＋シャンプー</span><span class="menu-price">¥4,300</span></div><div class="menu-item"><span class="menu-name">カット＋眉カット</span><span class="menu-price">¥3,800</span></div><div class="menu-item"><span class="menu-name">カット＋シャンプー＋眉カット</span><span class="menu-price">¥4,400</span></div></div>
+    <div class="menu-group fi"><h3 class="menu-group-title">Member Course</h3><p class="menu-note">カット＋シャンプー＋エステシェーブ＋フットマッサージ＋スタイリング　60分</p><div class="menu-item"><span class="menu-name"><span class="member-badge gold">GOLD</span>ゴールド会員<small>来店31回以上</small></span><span class="menu-price">¥4,500</span></div><div class="menu-item"><span class="menu-name"><span class="member-badge silver">SILVER</span>シルバー会員<small>来店16〜30回</small></span><span class="menu-price">¥5,000</span></div><div class="menu-item"><span class="menu-name"><span class="member-badge standard">STD</span>スタンダード会員<small>来店1〜15回</small></span><span class="menu-price">¥5,800</span></div></div>
+    <div class="menu-group fi"><h3 class="menu-group-title">Special Course</h3><div class="menu-item"><span class="menu-name">アンシャンテコース<small>カット＋育毛ブラシシャンプー＋ヘッドスパ＋スタイリング　60分</small></span><span class="menu-price">¥5,900</span></div><div class="menu-item"><span class="menu-name">ビジネスマンコース<small>カット＋育毛ブラシシャンプー＋ヘッドスパ＋スタイリング＋エステシェーブ　60分</small></span><span class="menu-price">¥7,000</span></div><div class="menu-item"><span class="menu-name">エグゼクティブコース<small>カット＋育毛ブラシシャンプー＋ヘッドスパ＋スタイリング＋エステシェーブ＋手のマッサージ　80分</small></span><span class="menu-price">¥8,000</span></div></div>
+    <div class="menu-group fi"><h3 class="menu-group-title">Color &amp; Perm</h3><div class="menu-item"><span class="menu-name">白髪ぼかし<small>シャンプー込み</small></span><span class="menu-price">¥3,000</span></div><div class="menu-item"><span class="menu-name">カラー<small>シャンプー込み</small></span><span class="menu-price">¥4,000〜</span></div><div class="menu-item"><span class="menu-name">アイロンパーマ</span><span class="menu-price">¥4,500〜</span></div><div class="menu-item"><span class="menu-name">パーマ</span><span class="menu-price">¥6,000</span></div><div class="menu-item"><span class="menu-name">ツイストパーマ</span><span class="menu-price">¥9,000〜</span></div></div>
+    <div class="menu-group fi"><h3 class="menu-group-title">Student</h3><div class="menu-item"><span class="menu-name">学生カットのみ</span><span class="menu-price">¥2,500</span></div><div class="menu-item"><span class="menu-name">学生カット＋シャンプー</span><span class="menu-price">¥3,300</span></div><div class="menu-item"><span class="menu-name">学生カット＋シャンプー＋お顔そり</span><span class="menu-price">¥3,800</span></div></div>
+    <div class="menu-group fi"><h3 class="menu-group-title">Others</h3><div class="menu-item"><span class="menu-name">エステシェーブ</span><span class="menu-price">¥1,500</span></div><div class="menu-item"><span class="menu-name">眉カット</span><span class="menu-price">¥600</span></div><div class="menu-item"><span class="menu-name">高校生カット</span><span class="menu-price">¥3,300</span></div><div class="menu-item"><span class="menu-name">小・中学生カット</span><span class="menu-price">¥2,500</span></div></div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram section-padding" id="instagram">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:.5rem"><p class="section-label">Style Gallery</p><h2 class="section-title">Instagram</h2><p class="section-title-jp">施術スタイル・Before / After</p></div>
+    <div class="ig-grid fi">
+      <div class="ig-item"><img src="https://static.wixstatic.com/media/8ba8e4_825409e8c0644e8ba3ead50a63dda23c~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/8ba8e4_825409e8c0644e8ba3ead50a63dda23c~mv2.jpg" alt="Style 1" loading="lazy"></div>
+      <div class="ig-item"><img src="https://static.wixstatic.com/media/8ba8e4_4a061278fc974263a5e4fcb068c63198~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_4a061278fc974263a5e4fcb068c63198~mv2.jpg" alt="Style 2" loading="lazy"></div>
+      <div class="ig-item"><img src="https://static.wixstatic.com/media/8ba8e4_c803460b47d64a749fb64eacddfdc625~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_c803460b47d64a749fb64eacddfdc625~mv2.jpg" alt="Style 3" loading="lazy"></div>
+      <div class="ig-item"><img src="https://static.wixstatic.com/media/8ba8e4_489b71b7a8654f82b508e2cfd07e3b17~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_489b71b7a8654f82b508e2cfd07e3b17~mv2.jpg" alt="Style 4" loading="lazy"></div>
+      <div class="ig-item"><img src="https://static.wixstatic.com/media/8ba8e4_b75d7cb156484ef1bd85fab98f4fb52d~mv2.jpg/v1/fill/w_600,h_600,fp_0.35_0.38,al_c,q_90,enc_avif,quality_auto/8ba8e4_b75d7cb156484ef1bd85fab98f4fb52d~mv2.jpg" alt="Style 5" loading="lazy"></div>
+      <div class="ig-item"><img src="https://static.wixstatic.com/media/8ba8e4_eff4833fcc254f388bbdcd3f38de9e5d~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_eff4833fcc254f388bbdcd3f38de9e5d~mv2.jpg" alt="Style 6" loading="lazy"></div>
+    </div>
+    <div class="ig-follow fi fi-d1"><a href="https://www.instagram.com/enchante_hair/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@enchante_hair をフォロー</a></div>
+  </div>
+</section>
+
+<!-- GALLERY with ornate frames + lightbox -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:2rem"><p class="section-label">Photo Gallery</p><h2 class="section-title on-dark">Gallery</h2><div class="gold-line center"></div></div>
+  </div>
+  <div class="gallery-grid fi" id="galleryGrid">
+    <div class="gallery-frame" data-i="0"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_1b5bc8bc45fe4d149912b87a57390ee7~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8ba8e4_1b5bc8bc45fe4d149912b87a57390ee7~mv2.jpg" alt="店内" loading="lazy"></div><p class="gallery-caption">Shop Interior</p></div>
+    <div class="gallery-frame" data-i="1"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_825409e8c0644e8ba3ead50a63dda23c~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/8ba8e4_825409e8c0644e8ba3ead50a63dda23c~mv2.jpg" alt="バーバーチェア" loading="lazy"></div><p class="gallery-caption">Barber Chair</p></div>
+    <div class="gallery-frame" data-i="2"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_4a061278fc974263a5e4fcb068c63198~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_4a061278fc974263a5e4fcb068c63198~mv2.jpg" alt="ダーツボード" loading="lazy"></div><p class="gallery-caption">Darts Board</p></div>
+    <div class="gallery-frame" data-i="3"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_c803460b47d64a749fb64eacddfdc625~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_c803460b47d64a749fb64eacddfdc625~mv2.jpg" alt="プロジェクター" loading="lazy"></div><p class="gallery-caption">Projector</p></div>
+    <div class="gallery-frame" data-i="4"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_caef9a0a065845acba0610675433e0aa~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_caef9a0a065845acba0610675433e0aa~mv2.jpg" alt="店内全景" loading="lazy"></div><p class="gallery-caption">Vintage Space</p></div>
+    <div class="gallery-frame" data-i="5"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_489b71b7a8654f82b508e2cfd07e3b17~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_489b71b7a8654f82b508e2cfd07e3b17~mv2.jpg" alt="道具" loading="lazy"></div><p class="gallery-caption">Gent Gear</p></div>
+    <div class="gallery-frame" data-i="6"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_b75d7cb156484ef1bd85fab98f4fb52d~mv2.jpg/v1/fill/w_600,h_600,fp_0.35_0.38,al_c,q_90,enc_avif,quality_auto/8ba8e4_b75d7cb156484ef1bd85fab98f4fb52d~mv2.jpg" alt="インテリア" loading="lazy"></div><p class="gallery-caption">Interior</p></div>
+    <div class="gallery-frame" data-i="7"><div class="gallery-frame-inner"><img src="https://static.wixstatic.com/media/8ba8e4_d31e24bc99ba4c4e9cee873c77442c02~mv2.jpg/v1/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/8ba8e4_d31e24bc99ba4c4e9cee873c77442c02~mv2.jpg" alt="小物" loading="lazy"></div><p class="gallery-caption">Details</p></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-nav prev" id="lbPrev">◂</span>
+  <span class="lightbox-nav next" id="lbNext">▸</span>
+  <div class="lightbox-frame" id="lbFrame">
+    <span class="lightbox-close" id="lbClose">✕</span>
+    <img id="lbImg" src="" alt="">
+  </div>
+  <p class="lightbox-caption" id="lbCaption"></p>
+  <p class="lightbox-counter" id="lbCounter"></p>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products section-padding" id="products">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:2.5rem"><p class="section-label">Enchanté｜京 TASINAMI</p><h2 class="section-title">大人の嗜みシリーズ</h2><div class="gold-line center"></div></div>
+    <div class="product-cards">
+      <div class="product-card fi"><p class="product-num">01</p><h3 class="product-name">First Shave</h3><p class="product-brand">Enchanté｜京 TASINAMI</p><p class="product-desc">はじめてを、雑にしない。<br>大人男子が初めて使うシェービングセット。</p><p class="product-price">¥20,000</p></div>
+      <div class="product-card fi fi-d1"><p class="product-num">02</p><h3 class="product-name">Enchanté Clair</h3><p class="product-brand">整髪料</p><p class="product-desc">澄んだ香り、軽やかに整える。</p><p class="product-price">¥2,200</p></div>
+      <div class="product-card fi fi-d2"><p class="product-num">03</p><h3 class="product-name">Enchanté 雅 Luxe</h3><p class="product-brand">整髪料</p><p class="product-desc">香り立つ艶。余裕をまとう。</p><p class="product-price">¥2,200</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice section-padding" id="voice">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:.5rem"><p class="section-label">Customer Voice</p><h2 class="section-title">お客様の声</h2><div class="gold-line center"></div></div>
+    <div class="voice-cards">
+      <div class="voice-card fi"><div class="voice-stars">★★★★★</div><p class="voice-text">仕事帰りに通えるのが最高。カット中にダーツの話で盛り上がって、あっという間に終わる。ここに来ると明日も頑張ろうって思えます。</p><div class="voice-meta"><span class="voice-badge gold">GOLD</span><span class="voice-who">40代 会社員・8年通い</span></div></div>
+      <div class="voice-card fi fi-d1"><div class="voice-stars">★★★★★</div><p class="voice-text">エステシェーブが気持ちよすぎて毎回寝てしまう。奥さんに「肌ツルツルやん」って言われました。フットマッサージもセットで最高です。</p><div class="voice-meta"><span class="voice-badge silver">SILVER</span><span class="voice-who">30代 会社員・3年通い</span></div></div>
+      <div class="voice-card fi fi-d2"><div class="voice-stars">★★★★★</div><p class="voice-text">初めてでも1対1なので緊張しなかった。スタイリングの仕方も丁寧に教えてくれるから、次の日から自分でも再現できる。</p><div class="voice-meta"><span class="voice-who">20代 学生・初来店</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STYLIST -->
+<section class="stylist section-padding" id="stylist">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:2.5rem"><p class="section-label">Stylist</p><h2 class="section-title">スタイリスト</h2><div class="gold-line center"></div></div>
+    <div class="stylist-inner fi">
+      <div class="stylist-img"><img src="https://static.wixstatic.com/media/8ba8e4_9511a59da9b2443aa35ea9a4356e0bef~mv2.jpg/v1/crop/x_47,y_0,w_125,h_164/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/B041333731_219-164_edited_edited.jpg" alt="蜂谷 哲史"></div>
+      <div><h3 class="stylist-name">蜂谷 哲史</h3><p class="stylist-name-en">Tetsuji Hachiya</p><p class="stylist-bio">散髪屋4代目。地元・亀岡で育ち、「この店に来たらまた明日から頑張れる」そんなエネルギーを充電できる場所を作りたい一心で開業。再現性の高いカットと、エステシェーブ・フットマッサージで心身をリフレッシュ。担当が変わることのない、マンツーマン施術にこだわっています。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-padding" id="faq">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:.5rem"><p class="section-label">FAQ</p><h2 class="section-title">よくある質問</h2><p class="section-title-jp">初めての方へ</p></div>
+    <div class="faq-list fi">
+      <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-mark">Q</span><span class="q-text">予約なしでも大丈夫ですか？</span><span class="q-arrow">▼</span></button><div class="faq-a"><p>マンツーマン施術のため、予約優先です。LINEまたはお電話でご予約いただくと確実です。当日空きがあればご案内できます。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-mark">Q</span><span class="q-text">女性や子供もカットできますか？</span><span class="q-arrow">▼</span></button><div class="faq-a"><p>メンズ専門店ですが、小・中学生・高校生の男の子は大歓迎です。お子様連れのお母様は店内でお待ちいただけます。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-mark">Q</span><span class="q-text">会員制度ってなんですか？</span><span class="q-arrow">▼</span></button><div class="faq-a"><p>来店回数に応じてランクが上がり、メインコース（カット＋シャンプー＋エステシェーブ＋フットマッサージ＋スタイリング）が割引になります。スタンダード→シルバー→ゴールドの3段階です。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-mark">Q</span><span class="q-text">駐車場はありますか？</span><span class="q-arrow">▼</span></button><div class="faq-a"><p>はい。店舗前に専用駐車場があります（看板がある場所のみ）。JR千代川駅の西口から徒歩3分です。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-mark">Q</span><span class="q-text">支払い方法は？</span><span class="q-arrow">▼</span></button><div class="faq-a"><p>現金・各種クレジットカード・PayPay等のQR決済に対応しています。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="q-mark">Q</span><span class="q-text">仕上がりのイメージが決まっていなくても大丈夫？</span><span class="q-arrow">▼</span></button><div class="faq-a"><p>もちろんです。髪質やライフスタイルに合わせてご提案します。「いい感じにしてください」で大丈夫です。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news section-padding" id="news">
+  <div class="container">
+    <div class="fi"><p class="section-label">News</p><h2 class="section-title">お知らせ</h2><div class="gold-line"></div></div>
+    <div class="news-list fi">
+      <div class="news-item"><span class="news-date">2026.04.01</span><span class="news-tag">営業</span><span class="news-text">4月の定休日：毎週月曜日、第2・第3火曜日</span></div>
+      <div class="news-item"><span class="news-date">2026.03.15</span><span class="news-tag">新商品</span><span class="news-text">オリジナル整髪料「Enchanté Clair」販売開始しました</span></div>
+      <div class="news-item"><span class="news-date">2026.03.01</span><span class="news-tag">お知らせ</span><span class="news-text">学生メニュー3種を新設しました</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LINE CTA -->
+<section class="line-cta" id="line">
+  <p class="line-cta-title fi">LINEで簡単予約</p>
+  <p class="line-cta-sub fi fi-d1">友だち追加で空き状況の確認・予約がスムーズに。<br>お得な情報もお届けします。</p>
+  <div class="fi fi-d2" style="text-align:center"><a href="https://line.me/R/ti/p/@kbs5076i" class="btn-line"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="#fff" d="M19.365 9.89c.50 0 .907.408.907.91 0 .502-.407.91-.907.91H17.71v1.04h1.655c.50 0 .907.407.907.91s-.407.91-.907.91H16.8a.91.91 0 0 1-.907-.91V9.89c0-.502.407-.91.907-.91h2.565zm-5.577 3.771a.91.91 0 0 1-.652.276.908.908 0 0 1-.65-.276L10.65 11.84v1.82a.91.91 0 0 1-1.817 0V9.89c0-.352.2-.67.516-.823.316-.152.69-.108.963.11l1.835 1.54V9.89a.91.91 0 1 1 1.818 0v3.77zm-5.847.182a.91.91 0 0 1-1.818 0V9.89a.91.91 0 0 1 1.818 0v3.952zm-3.306.182H3.08a.91.91 0 0 1-.908-.91V9.89a.91.91 0 0 1 1.818 0v3.042h.652c.50 0 .908.407.908.91s-.407.91-.908.91zM12 2C6.477 2 2 6.24 2 11.47c0 4.61 3.868 8.47 9.088 9.29.354.06.835.19.956.43.11.22.072.56.035.78l-.154.943c-.047.27-.218 1.06.929.578 1.148-.48 6.19-3.644 8.45-6.24C22.736 15.1 22 13.37 22 11.47 22 6.24 17.523 2 12 2z"/></svg>友だち追加して予約する</a></div>
+  <div class="line-qr fi fi-d3"><div style="width:140px;height:140px;border-radius:8px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto;color:var(--text-dim);font-size:.6rem">QR CODE</div><p>LINE ID: @kbs5076i</p></div>
+</section>
+
+<!-- ACCESS -->
+<section class="access section-padding" id="access">
+  <div class="container">
+    <div class="fi"><p class="section-label">Access</p><h2 class="section-title">アクセス</h2><div class="gold-line"></div></div>
+    <div class="access-grid fi">
+      <dl class="access-info"><dt>Address</dt><dd>〒621-0051<br>京都府亀岡市千代川町今津1-16-5<br>JR千代川駅 西口 徒歩3分</dd><dt>Hours</dt><dd>平日　10:00〜21:00<br>土日祝　8:00〜18:00</dd><dt>Closed</dt><dd>毎週月曜日<br>第2・第3 月火連休</dd><dt>Contact</dt><dd>TEL：0771-24-5339<br>LINE：@kbs5076i</dd><dt>Parking</dt><dd>あり（看板がある場所のみ）</dd></dl>
+      <div class="access-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.5!2d135.555!3d35.015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5Lqs6YO95bqc5Lqv5bKh5biC5Y2D5Luj5bed55S65LuK5rSl!5e0!3m2!1sja!2sjp!4v1700000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <p class="footer-cta-title fi">さあ、自分だけの時間を予約しよう。</p>
+  <p class="footer-cta-sub fi fi-d1">亀岡のオトナ男子が集う、癒しのBARBER</p>
+  <a href="https://line.me/R/ti/p/@kbs5076i" class="btn-line fi fi-d2"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="#fff" d="M19.365 9.89c.50 0 .907.408.907.91 0 .502-.407.91-.907.91H17.71v1.04h1.655c.50 0 .907.407.907.91s-.407.91-.907.91H16.8a.91.91 0 0 1-.907-.91V9.89c0-.502.407-.91.907-.91h2.565zm-5.577 3.771a.91.91 0 0 1-.652.276.908.908 0 0 1-.65-.276L10.65 11.84v1.82a.91.91 0 0 1-1.817 0V9.89c0-.352.2-.67.516-.823.316-.152.69-.108.963.11l1.835 1.54V9.89a.91.91 0 1 1 1.818 0v3.77zm-5.847.182a.91.91 0 0 1-1.818 0V9.89a.91.91 0 0 1 1.818 0v3.952zm-3.306.182H3.08a.91.91 0 0 1-.908-.91V9.89a.91.91 0 0 1 1.818 0v3.042h.652c.50 0 .908.407.908.91s-.407.91-.908.91zM12 2C6.477 2 2 6.24 2 11.47c0 4.61 3.868 8.47 9.088 9.29.354.06.835.19.956.43.11.22.072.56.035.78l-.154.943c-.047.27-.218 1.06.929.578 1.148-.48 6.19-3.644 8.45-6.24C22.736 15.1 22 13.37 22 11.47 22 6.24 17.523 2 12 2z"/></svg>LINE で予約する</a>
+</div>
+<footer><p class="footer-logo">ENCHANTÉ'-HAIR</p><p class="footer-address">京都府亀岡市千代川町今津1-16-5｜TEL 0771-24-5339｜LINE @kbs5076i</p><p class="footer-copy">© 2002 Enchanté'-Hair. All rights reserved.</p></footer>
+
+<!-- BOOKING BAR -->
+<div class="booking-bar" id="bookingBar">
+  <a href="https://line.me/R/ti/p/@kbs5076i" class="btn-line"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M19.365 9.89c.50 0 .907.408.907.91 0 .502-.407.91-.907.91H17.71v1.04h1.655c.50 0 .907.407.907.91s-.407.91-.907.91H16.8a.91.91 0 0 1-.907-.91V9.89c0-.502.407-.91.907-.91h2.565zm-5.577 3.771a.91.91 0 0 1-.652.276.908.908 0 0 1-.65-.276L10.65 11.84v1.82a.91.91 0 0 1-1.817 0V9.89c0-.352.2-.67.516-.823.316-.152.69-.108.963.11l1.835 1.54V9.89a.91.91 0 1 1 1.818 0v3.77zm-5.847.182a.91.91 0 0 1-1.818 0V9.89a.91.91 0 0 1 1.818 0v3.952zm-3.306.182H3.08a.91.91 0 0 1-.908-.91V9.89a.91.91 0 0 1 1.818 0v3.042h.652c.50 0 .908.407.908.91s-.407.91-.908.91zM12 2C6.477 2 2 6.24 2 11.47c0 4.61 3.868 8.47 9.088 9.29.354.06.835.19.956.43.11.22.072.56.035.78l-.154.943c-.047.27-.218 1.06.929.578 1.148-.48 6.19-3.644 8.45-6.24C22.736 15.1 22 13.37 22 11.47 22 6.24 17.523 2 12 2z"/></svg>LINE 予約</a>
+  <a href="tel:0771245339" class="btn-tel">☎ 電話</a>
+</div>
+
+<script>
+/* ═══ NAV + BOOKING BAR ═══ */
+const nav = document.getElementById('nav');
+const bookingBar = document.getElementById('bookingBar');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 60);
+  bookingBar.classList.toggle('show', y > 400);
+});
+
+/* ═══ FADE IN ═══ */
+const fio = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); fio.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fi').forEach(el => fio.observe(el));
+
+/* ═══ SCISSOR SNIP SOUND ═══ */
+const snipAudio = new Audio('data:audio/mpeg;base64,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');
+snipAudio.volume = 0.9;
+function playSnip() {
+  const s = snipAudio.cloneNode();
+  s.volume = 0.9;
+  s.play().catch(() => {});
+}
+
+/* ═══ LIGHTBOX ═══ */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCaption = document.getElementById('lbCaption');
+const lbCounter = document.getElementById('lbCounter');
+const frames = document.querySelectorAll('.gallery-frame');
+let currentIdx = 0;
+
+const galleryData = Array.from(frames).map(f => ({
+  src: f.querySelector('img').src.replace(/w_600|h_600/g, s => s.replace('600','1200')),
+  caption: f.querySelector('.gallery-caption').textContent
+}));
+
+function openLightbox(i) {
+  currentIdx = i;
+  updateLightbox();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  playSnip();
+}
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function updateLightbox() {
+  lbImg.src = galleryData[currentIdx].src;
+  lbCaption.textContent = galleryData[currentIdx].caption;
+  lbCounter.textContent = (currentIdx + 1) + ' / ' + galleryData.length;
+}
+function nextSlide() {
+  currentIdx = (currentIdx + 1) % galleryData.length;
+  updateLightbox();
+  playSnip();
+}
+function prevSlide() {
+  currentIdx = (currentIdx - 1 + galleryData.length) % galleryData.length;
+  updateLightbox();
+  playSnip();
+}
+
+frames.forEach(f => f.addEventListener('click', () => openLightbox(parseInt(f.dataset.i))));
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbNext').addEventListener('click', nextSlide);
+document.getElementById('lbPrev').addEventListener('click', prevSlide);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+
+/* ═══ GAS API: 空き状況 ═══ */
+const API_URL = 'https://script.google.com/macros/s/AKfycbxxgLMI6EpUIQBtwzYC7232rBJME2wJA6_JzmckvjkYiMvZdI6KGl9l_lKn2w6zhgzL/exec';
+const FALLBACK_DAYS = [
+  { month:4, day:10, dow:'木', isClosed:false, isFull:false, timesText:'10:00–12:00　14:00–17:00' },
+  { month:4, day:11, dow:'金', isClosed:false, isFull:false, timesText:'11:00–13:00　15:00–21:00' },
+  { month:4, day:12, dow:'土', isClosed:false, isFull:false, timesText:'8:00–10:00' },
+  { month:4, day:13, dow:'日', isClosed:false, isFull:true, timesText:'' },
+  { month:4, day:14, dow:'月', isClosed:true, isFull:false, timesText:'' },
+];
+function renderDays(days) {
+  const c = document.getElementById('availSlots');
+  document.getElementById('availLoading').style.display = 'none';
+  days.slice(0, 5).forEach(d => {
+    const r = document.createElement('div'); r.className = 'avail-day';
+    const dot = d.isClosed ? 'closed' : d.isFull ? 'full' : '';
+    const dc = d.isClosed ? 'holiday' : '';
+    const tc = d.isClosed ? 'closed' : '';
+    const ts = d.isClosed ? '定休日' : d.isFull ? '✕ 満席' : d.timesText || '—';
+    r.innerHTML = `<span class="avail-dot ${dot}"></span><span class="avail-date ${dc}">${d.month}/${d.day} (${d.dow})</span><span class="avail-times ${tc}">${ts}</span>`;
+    c.appendChild(r);
+  });
+}
+async function loadAvailability() {
+  try {
+    const res = await fetch(API_URL, { redirect: 'follow' });
+    const json = await res.json();
+    const text = json.text;
+    if (!text) throw new Error('No text');
+    const lines = text.split('\n').filter(l => l.trim());
+    const days = [];
+    const today = new Date(), todayM = today.getMonth() + 1, todayD = today.getDate();
+    for (const line of lines) {
+      const m = line.match(/(\d{1,2})\/(\d{1,2})\(([日月火水木金土])\)/);
+      if (!m) continue;
+      const month = parseInt(m[1]), day = parseInt(m[2]), dow = m[3];
+      if (month < todayM || (month === todayM && day < todayD)) continue;
+      const isClosed = line.includes('定休日');
+      const isFull = !isClosed && line.includes('満席');
+      let timesText = '';
+      if (!isClosed && !isFull) {
+        const slots = [], rx = /(\d{1,2}:\d{2})\s*[~〜]\s*(\d{1,2}:\d{2})/g;
+        let sm; while ((sm = rx.exec(line)) !== null) slots.push(sm[1] + '–' + sm[2]);
+        timesText = slots.join('　');
+      }
+      days.push({ month, day, dow, isClosed, isFull, timesText });
+    }
+    renderDays(days.length > 0 ? days : FALLBACK_DAYS);
+  } catch (e) { console.warn('API fallback:', e); renderDays(FALLBACK_DAYS); }
+}
+loadAvailability();
+</script>
+</body>
+</html>
