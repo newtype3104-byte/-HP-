@@ -186,7 +186,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .lightbox-frame img{display:block;max-width:80vw;max-height:80vh;object-fit:contain}
 .lightbox-close{position:absolute;top:-40px;right:-10px;color:#fff;font-size:1.5rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transition:color .2s}
 .lightbox-close:hover{color:var(--gold)}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;padding:1rem;transition:color .2s;user-select:none;-webkit-user-select:none}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;padding:1rem;transition:color .2s;user-select:none;-webkit-user-select:none;z-index:1}
 .lightbox-nav:hover{color:var(--gold)}
 .lightbox-nav.prev{left:1rem}
 .lightbox-nav.next{right:1rem}
@@ -698,5 +698,4 @@ async function loadAvailability() {
 
 loadAvailability();
 </script>
-</body>
-</html>
+</body
