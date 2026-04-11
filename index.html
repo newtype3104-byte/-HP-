@@ -505,9 +505,6 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
       <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/7653EB9C-0B2C-4725-8218-2191DC05F00A.jpeg" alt="Style 5" loading="lazy"></div>
       <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/K20260405185420_ig.png" alt="Style 6" loading="lazy"></div>
     </div>
-    <div style="text-align:center;margin-top:1.5rem">
-      <button onclick="playSnip()" style="font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.15em;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:100px;padding:.5rem 1.5rem;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--gold)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='var(--gold)'">✂ ハサミの音</button>
-    </div>
     <div class="ig-follow fi fi-d1"><a href="https://www.instagram.com/enchante___hair/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@enchante___hair をフォロー</a></div>
   </div>
 </section>
@@ -745,31 +742,46 @@ const galleryData = Array.from(frames).map(f => ({
   caption: f.querySelector('.gallery-caption').textContent
 }));
 
-function openLightbox(i) {
+const igItems = document.querySelectorAll('.ig-item');
+const igData = Array.from(igItems).map(item => ({
+  src: item.querySelector('img').src,
+  caption: item.querySelector('img').alt
+}));
+
+let currentData = galleryData;
+let useSnip = false;
+
+function openLightbox(i, data, snip) {
+  currentData = data;
+  useSnip = snip;
   currentIdx = i;
   updateLightbox();
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
+  if (useSnip) playSnip();
 }
 function closeLightbox() {
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
 function updateLightbox() {
-  lbImg.src = galleryData[currentIdx].src;
-  lbCaption.textContent = galleryData[currentIdx].caption;
-  lbCounter.textContent = (currentIdx + 1) + ' / ' + galleryData.length;
+  lbImg.src = currentData[currentIdx].src;
+  lbCaption.textContent = currentData[currentIdx].caption;
+  lbCounter.textContent = (currentIdx + 1) + ' / ' + currentData.length;
 }
 function nextSlide() {
-  currentIdx = (currentIdx + 1) % galleryData.length;
+  currentIdx = (currentIdx + 1) % currentData.length;
   updateLightbox();
+  if (useSnip) playSnip();
 }
 function prevSlide() {
-  currentIdx = (currentIdx - 1 + galleryData.length) % galleryData.length;
+  currentIdx = (currentIdx - 1 + currentData.length) % currentData.length;
   updateLightbox();
+  if (useSnip) playSnip();
 }
 
-frames.forEach((f, i) => f.addEventListener('click', () => openLightbox(i)));
+frames.forEach((f, i) => f.addEventListener('click', () => openLightbox(i, galleryData, false)));
+igItems.forEach((item, i) => item.addEventListener('click', () => openLightbox(i, igData, true)));
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
 document.getElementById('lbNext').addEventListener('click', nextSlide);
 document.getElementById('lbPrev').addEventListener('click', prevSlide);
