@@ -337,6 +337,9 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-video-wrap">
+    <video id="heroBg" autoplay muted loop playsinline>
+      <source src="./hero-bg.mp4" type="video/mp4">
+    </video>
     <div class="hero-poster"></div>
   </div>
   <div class="hero-content fi">
@@ -697,6 +700,16 @@ async function loadAvailability() {
 
 
 loadAvailability();
+
+// Hero背景動画：再生可能になったらポスター非表示
+(function() {
+  var vid = document.getElementById('heroBg');
+  if (!vid) return;
+  vid.addEventListener('canplay', function() {
+    var poster = document.querySelector('.hero-poster');
+    if (poster) poster.style.display = 'none';
+  }, { once: true });
+})();
 </script>
 </body>
 </html>
