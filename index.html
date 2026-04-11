@@ -126,6 +126,20 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .pillar-sub{font-size:.65rem;color:var(--text-dim)}
 @media(max-width:600px){.concept-pillars{grid-template-columns:1fr}}
 
+/* ═══════════ NIGHT SERVICE ═══════════ */
+.night-service{background-image:url('https://static.wixstatic.com/media/8ba8e4_1b5bc8bc45fe4d149912b87a57390ee7~mv2.jpg/v1/fill/w_1920,h_1536,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/8ba8e4_1b5bc8bc45fe4d149912b87a57390ee7~mv2.jpg');background-attachment:fixed;background-size:cover;background-position:center;position:relative;text-align:center}
+.night-service::before{content:'';position:absolute;inset:0;background:rgba(11,15,13,.65)}
+.night-service .container{position:relative;z-index:1}
+.night-service .section-label{color:var(--gold-light)}
+.night-title{font-family:'Noto Serif JP',serif;font-size:1.3rem;font-weight:400;color:#fff;letter-spacing:.08em;line-height:1.6;margin-bottom:.5rem}
+.night-body{font-family:'Noto Serif JP',serif;font-size:.82rem;font-weight:300;color:var(--text-on-dark);line-height:2.2;max-width:540px;margin:0 auto 2.5rem}
+.night-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.night-pillar{text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px}
+.night-pillar-icon{font-size:1.6rem;margin-bottom:.6rem}
+.night-pillar-title{font-family:'Noto Serif JP',serif;font-size:.85rem;font-weight:500;color:#fff;margin-bottom:.3rem}
+.night-pillar-sub{font-size:.65rem;color:var(--text-dim-on-dark);letter-spacing:.1em}
+@media(max-width:600px){.night-pillars{grid-template-columns:1fr}}
+
 /* ═══════════ MENU (chalk) ═══════════ */
 .menu{background:var(--chalk);color:var(--text-on-dark)}
 .menu .section-label{color:var(--gold-light)}
@@ -366,6 +380,21 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
       <div class="pillar fi fi-d1"><span class="pillar-num">01</span><p class="pillar-title">4代目の技術</p><p class="pillar-sub">Heritage</p></div>
       <div class="pillar fi fi-d2"><span class="pillar-num">02</span><p class="pillar-title">癒しの空間</p><p class="pillar-sub">Relaxation</p></div>
       <div class="pillar fi fi-d3"><span class="pillar-num">03</span><p class="pillar-title">男の隠れ家</p><p class="pillar-sub">Man Cave</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NIGHT SERVICE -->
+<section class="night-service section-padding" id="night-service">
+  <div class="container">
+    <div class="fi"><p class="section-label">Night Service</p></div>
+    <h2 class="night-title fi fi-d1">仕事帰りでも、立ち寄れる。</h2>
+    <div class="gold-line center fi fi-d2"></div>
+    <p class="night-body fi fi-d2">平日は21時まで営業。<br>仕事終わりの時間でも、ゆっくり施術を受けていただけます。<br>当日の空きがあればご案内も可能。<br>お気軽にお電話ください。</p>
+    <div class="night-pillars">
+      <div class="night-pillar fi fi-d1"><div class="night-pillar-icon">🌙</div><p class="night-pillar-title">平日 21時まで</p><p class="night-pillar-sub">Night Hours</p></div>
+      <div class="night-pillar fi fi-d2"><div class="night-pillar-icon">📞</div><p class="night-pillar-title">当日予約OK</p><p class="night-pillar-sub">Same-day OK</p></div>
+      <div class="night-pillar fi fi-d3"><div class="night-pillar-icon">💈</div><p class="night-pillar-title">マンツーマン施術</p><p class="night-pillar-sub">Private Session</p></div>
     </div>
   </div>
 </section>
