@@ -505,6 +505,9 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
       <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/7653EB9C-0B2C-4725-8218-2191DC05F00A.jpeg" alt="Style 5" loading="lazy"></div>
       <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/K20260405185420_ig.png" alt="Style 6" loading="lazy"></div>
     </div>
+    <div style="display:flex;justify-content:center;margin-top:1.5rem">
+      <button onclick="playSnip()" style="display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--gold);color:var(--gold);background:transparent;padding:.55rem 1.6rem;border-radius:100px;font-size:.78rem;font-weight:500;letter-spacing:.05em;cursor:pointer;transition:all .2s" onmouseover="this.style.background='rgba(184,150,80,.12)'" onmouseout="this.style.background='transparent'">✂ ハサミの音</button>
+    </div>
     <div class="ig-follow fi fi-d1"><a href="https://www.instagram.com/enchante___hair/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@enchante___hair をフォロー</a></div>
   </div>
 </section>
@@ -518,14 +521,6 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
     <div class="gallery-frame" data-i="0"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_0083.jpg" alt="外観" loading="lazy"></div><p class="gallery-caption">Exterior</p></div>
     <div class="gallery-frame" data-i="1"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_1580.jpg" alt="外観" loading="lazy"></div><p class="gallery-caption">Exterior</p></div>
     <div class="gallery-frame" data-i="1b"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_2225.jpg" alt="内装" loading="lazy"></div><p class="gallery-caption">Shop Interior</p></div>
-    <div class="gallery-frame" data-i="2"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/7653EB9C-0B2C-4725-8218-2191DC05F00A.jpeg" alt="カットスタイル集" loading="lazy"></div><p class="gallery-caption">Cut Style</p></div>
-    <div class="gallery-frame" data-i="3"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_3107.JPG" alt="ヘアスタイル" loading="lazy"></div><p class="gallery-caption">Hair Style</p></div>
-    <div class="gallery-frame" data-i="4"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6161.jpeg" alt="ヘアスタイル" loading="lazy"></div><p class="gallery-caption">Hair Style</p></div>
-    <div class="gallery-frame" data-i="5"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6166.jpeg" alt="ヘアスタイル" loading="lazy"></div><p class="gallery-caption">Hair Style</p></div>
-    <div class="gallery-frame" data-i="6"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6167.jpeg" alt="ヘアスタイル" loading="lazy"></div><p class="gallery-caption">Hair Style</p></div>
-    <div class="gallery-frame" data-i="7"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/K20260405121004_ig%20(1).png" alt="ビフォーアフター" loading="lazy"></div><p class="gallery-caption">Before &amp; After</p></div>
-    <div class="gallery-frame" data-i="8"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6079%20(1).jpeg" alt="ヘアスタイル" loading="lazy"></div><p class="gallery-caption">Hair Style</p></div>
-    <div class="gallery-frame" data-i="9"><div class="gallery-frame-inner"><img src="https://newtype3104-byte.github.io/-HP-/IMG_2636.jpg" alt="ヘアスタイル" loading="lazy"></div><p class="gallery-caption">Hair Style</p></div>
   </div>
 </section>
 
@@ -755,7 +750,6 @@ function openLightbox(i) {
   updateLightbox();
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
-  playSnip();
 }
 function closeLightbox() {
   lightbox.classList.remove('active');
@@ -769,12 +763,10 @@ function updateLightbox() {
 function nextSlide() {
   currentIdx = (currentIdx + 1) % galleryData.length;
   updateLightbox();
-  playSnip();
 }
 function prevSlide() {
   currentIdx = (currentIdx - 1 + galleryData.length) % galleryData.length;
   updateLightbox();
-  playSnip();
 }
 
 frames.forEach((f, i) => f.addEventListener('click', () => openLightbox(i)));
