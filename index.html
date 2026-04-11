@@ -265,6 +265,11 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .news-tag{font-size:.55rem;padding:.15rem .5rem;border-radius:100px;border:1px solid var(--border);color:var(--text-dim);white-space:nowrap}
 .news-text{font-size:.82rem;color:var(--text)}
 
+/* ═══════════ LINE MID BANNER ═══════════ */
+.line-mid{background:#0d1b2a;padding:2rem 1.5rem;text-align:center}
+.line-mid-text{font-family:'Noto Sans JP',sans-serif;font-size:1rem;font-weight:500;color:#e4e0d8;line-height:1.8;margin-bottom:1.4rem}
+@media(max-width:600px){.line-mid-text{font-size:.92rem}}
+
 /* ═══════════ LINE CTA ═══════════ */
 .line-cta{background:#0d1b2a;text-align:center;padding:5rem 1.5rem;position:relative}
 .line-cta::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
@@ -427,6 +432,12 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
     <div class="menu-group fi"><h3 class="menu-group-title">Others</h3><div class="menu-item"><span class="menu-name">エステシェーブ</span><span class="menu-price">¥1,500</span></div><div class="menu-item"><span class="menu-name">眉カット</span><span class="menu-price">¥600</span></div><div class="menu-item"><span class="menu-name">前髪カット</span><span class="menu-price">¥600</span></div><div class="menu-item"><span class="menu-name">レディースシェービング</span><span class="menu-price">¥3,000</span></div></div>
   </div>
 </section>
+
+<!-- LINE MID BANNER -->
+<div class="line-mid">
+  <p class="line-mid-text">気になるメニューはありましたか？<br>LINEから空き状況をチェック！</p>
+  <a href="https://line.me/R/ti/p/@kbs5076i" class="btn-line"><svg viewBox="0 0 24 24"><path d="M19.365 9.89c.50 0 .907.408.907.91 0 .502-.407.91-.907.91H17.71v1.04h1.655c.50 0 .907.407.907.91s-.407.91-.907.91H16.8a.91.91 0 0 1-.907-.91V9.89c0-.502.407-.91.907-.91h2.565zm-5.577 3.771a.91.91 0 0 1-.652.276.908.908 0 0 1-.65-.276L10.65 11.84v1.82a.91.91 0 0 1-1.817 0V9.89c0-.352.2-.67.516-.823.316-.152.69-.108.963.11l1.835 1.54V9.89a.91.91 0 1 1 1.818 0v3.77zm-5.847.182a.91.91 0 0 1-1.818 0V9.89a.91.91 0 0 1 1.818 0v3.952zm-3.306.182H3.08a.91.91 0 0 1-.908-.91V9.89a.91.91 0 0 1 1.818 0v3.042h.652c.50 0 .908.407.908.91s-.407.91-.908.91zM12 2C6.477 2 2 6.24 2 11.47c0 4.61 3.868 8.47 9.088 9.29.354.06.835.19.956.43.11.22.072.56.035.78l-.154.943c-.047.27-.218 1.06.929.578 1.148-.48 6.19-3.644 8.45-6.24C22.736 15.1 22 13.37 22 11.47 22 6.24 17.523 2 12 2z"/></svg>LINEで予約する</a>
+</div>
 
 <!-- INSTAGRAM -->
 <section class="instagram section-padding" id="instagram">
