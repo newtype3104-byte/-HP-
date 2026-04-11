@@ -303,8 +303,20 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .line-phone-label-title{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;letter-spacing:.06em;color:var(--gold);margin-bottom:.4rem}
 .line-phone-label-desc{font-size:1.15rem;font-weight:500;color:rgba(228,224,216,.85);line-height:1.7}
 .line-phone-arrow{display:flex;align-items:center;color:var(--gold);font-size:1.5rem;font-weight:600;padding-top:5rem;flex-shrink:0}
-@media(max-width:600px){.line-phone{width:150px}.line-phone-arrow{padding-top:0;font-size:1.2rem}}
-@media(max-width:480px){.line-phones{gap:.8rem}.line-phone{width:110px}.line-phone-frame{padding:6px;border-radius:16px}.line-phone-frame img{border-radius:12px}.line-phone-label-title{font-size:1.1rem}.line-phone-label-desc{font-size:.95rem}}
+@media(max-width:600px){
+  .line-phones{flex-direction:column;align-items:center;gap:1.2rem}
+  .line-phone{width:80%}
+  .line-phone-arrow{padding-top:0;font-size:1.5rem;transform:rotate(90deg)}
+  .line-phone-label-title{font-size:1.3rem;font-weight:700;color:#fff}
+  .line-phone-label-desc{font-size:1.1rem;font-weight:600;color:#fff}
+}
+@media(max-width:480px){
+  .line-phone{width:85%}
+  .line-phone-frame{padding:6px;border-radius:16px}
+  .line-phone-frame img{border-radius:12px}
+  .line-phone-label-title{font-size:1.2rem}
+  .line-phone-label-desc{font-size:1rem}
+}
 
 /* ═══════════ ACCESS ═══════════ */
 .access{background:var(--cream)}
