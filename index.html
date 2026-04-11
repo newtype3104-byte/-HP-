@@ -724,7 +724,7 @@ function prevSlide() {
   playSnip();
 }
 
-frames.forEach(f => f.addEventListener('click', () => openLightbox(parseInt(f.dataset.i))));
+frames.forEach((f, i) => f.addEventListener('click', () => openLightbox(i)));
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
 document.getElementById('lbNext').addEventListener('click', nextSlide);
 document.getElementById('lbPrev').addEventListener('click', prevSlide);
