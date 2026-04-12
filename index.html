@@ -154,13 +154,14 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .hero-avail{position:relative;z-index:2;margin-top:1.5rem;background:rgba(243,241,236,.92);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.15)}
 .avail-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
 .avail-title{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
-.avail-btn{display:block;width:100%;text-align:center;background:#c9a96e;color:#1a1a1a;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:700;letter-spacing:.05em;text-decoration:none;margin-top:1rem;transition:all .2s ease}
-.avail-btn:hover{background:#d4b85a;transform:translateY(-1px)}
-.avail-slots{display:flex;flex-direction:column;gap:.35rem}
-.avail-day{display:flex;align-items:center;gap:.6rem;font-size:.78rem}
-.avail-date{font-family:'Cinzel',serif;min-width:90px;color:var(--text);font-weight:500;letter-spacing:.05em}
+.avail-btn{display:inline-block;background:transparent;border:1.5px solid #c9a96e;color:#c9a96e;padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s ease}
+.avail-btn:hover{background:#c9a96e;color:#1a1a1a}
+.avail-btn-wrap{text-align:right;margin-top:.9rem}
+.avail-slots{display:flex;flex-direction:column;gap:.5rem}
+.avail-day{display:flex;align-items:center;gap:.6rem;font-size:.78rem;line-height:1.9}
+.avail-date{font-family:'Cinzel',serif;min-width:90px;color:#333;font-weight:600;letter-spacing:.05em;font-size:.95rem}
 .avail-date.holiday{color:#dc4040}
-.avail-times{color:var(--text-light);font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.avail-times{color:#222;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .avail-times.closed{color:#dc4040}
 .avail-loading{text-align:center;padding:1rem;color:var(--text-dim);font-size:.75rem}
 .avail-dot{width:5px;height:5px;border-radius:50%;background:#2d9d5a;flex-shrink:0}
@@ -480,7 +481,7 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
   <div class="hero-avail fi fi-d2" id="availPanel">
     <div class="avail-header"><span class="avail-title">Availability</span></div>
     <div class="avail-slots" id="availSlots"><div class="avail-loading" id="availLoading">空き状況を取得中...</div></div>
-    <a href="https://newtype3104-byte.github.io/enchante-hair/" class="avail-btn">空き状況をすべて見る →</a>
+    <div class="avail-btn-wrap"><a href="https://newtype3104-byte.github.io/enchante-hair/" class="avail-btn">すべて見る →</a></div>
   </div>
 </section>
 
