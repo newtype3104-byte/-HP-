@@ -416,6 +416,17 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
   .section-title{font-size:2rem}
   .booking-bar{display:none}
 }
+.review-section{padding:3rem 1rem;text-align:center}
+.review-card{max-width:400px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:2.5rem 2rem;text-align:center}
+.review-subtitle{font-size:.75rem;letter-spacing:.1em;color:var(--text-muted);margin-bottom:.8rem}
+.review-title{font-size:1.3rem;font-weight:700;letter-spacing:.08em;color:var(--text);margin-bottom:.9rem}
+.review-title span{color:#4285F4}
+.review-message{font-size:.85rem;color:var(--text-muted);line-height:1.9;margin-bottom:1.6rem}
+.review-qr{display:flex;justify-content:center;margin-bottom:1rem}
+.review-qr div{padding:8px;background:#fff;border-radius:4px;display:inline-block}
+.review-instruction{font-size:.72rem;color:var(--text-muted);line-height:1.8;margin-bottom:1.2rem}
+.review-stars{font-size:1.5rem;letter-spacing:.15em;color:#c9a96e;margin-bottom:.6rem}
+.review-shopname{font-size:.9rem;letter-spacing:.2em;color:var(--text-muted)}
 </style>
 </head>
 <body>
@@ -622,6 +633,28 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
     </div>
   </div>
 </section>
+
+<!-- GOOGLE REVIEW -->
+<section class="review-section">
+  <div class="review-card fi fi-d2">
+    <p class="review-subtitle">もしよろしければ</p>
+    <h2 class="review-title"><span>Google</span>の口コミ</h2>
+    <p class="review-message">書いていただけると<br>励みになります</p>
+    <div class="review-qr"><div id="reviewQR"></div></div>
+    <p class="review-instruction">スマホでQRコードを読み取ると<br>口コミページが開きます</p>
+    <div class="review-stars">★★★★★</div>
+    <p class="review-shopname">アンシャンテ</p>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('reviewQR'), {
+    text: 'https://search.google.com/local/writereview?placeid=ChIJuUK9MLlTAGARB-2Yo8ma60s',
+    width: 160, height: 160,
+    colorDark: '#000000', colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
 
 <!-- NEWS -->
 <section class="news section-padding" id="news">
