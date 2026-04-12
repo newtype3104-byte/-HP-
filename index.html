@@ -246,7 +246,8 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .gallery-frame-inner::after{bottom:4px;right:6px;transform:rotate(180deg)}
 .gallery-caption{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.2em;color:#b0b8b4;text-align:center;margin-top:.8rem;text-transform:uppercase}
 
-@media(max-width:768px){.hero{min-height:100svh;padding-bottom:1.5rem}.hero-avail{position:relative;margin-top:0;margin-left:-1.5rem;margin-right:-1.5rem;border-radius:0;border-left:none;border-right:none;backdrop-filter:none;background:var(--cream);box-shadow:none;border-top:1px solid var(--border)}.night-body{font-size:.88rem}.menu-name{font-size:1.05rem}.line-benefit-desc{font-size:.88rem}}
+@media(max-width:768px){.hero{min-height:100svh;padding-bottom:1.5rem}.hero-avail{position:relative;margin-top:0;margin-left:-1.5rem;margin-right:-1.5rem;border-radius:0;border-left:none;border-right:none;backdrop-filter:none;background:var(--cream);box-shadow:none;border-top:1px solid var(--border)}.night-body{font-size:.88rem}.menu-name{font-size:1.05rem}.line-benefit-desc{font-size:.88rem}.avail-toggle{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem;cursor:pointer;font-size:.82rem;font-weight:500;color:var(--gold);letter-spacing:.08em}.avail-toggle-arrow{font-size:.6rem;transition:transform .3s}.hero-avail.avail-open .avail-toggle-arrow{transform:rotate(180deg)}.avail-body{max-height:0;overflow:hidden;transition:max-height .4s ease}.hero-avail.avail-open .avail-body{max-height:500px}}
+@media(min-width:769px){.avail-toggle{display:none}.avail-body{max-height:none;overflow:visible}}
 @media(max-width:768px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
 @media(max-width:420px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:1rem}}
 
@@ -487,10 +488,13 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
     </div>
   </div>
   <div class="hero-avail fi fi-d2" id="availPanel">
+    <div class="avail-toggle" id="availToggle"><span>空き状況を見る</span><span class="avail-toggle-arrow">▼</span></div>
+    <div class="avail-body" id="availBody">
     <div class="avail-header"><span class="avail-title">Availability</span></div>
     <div class="avail-slots" id="availSlots"><div class="avail-loading" id="availLoading">空き状況を取得中...</div></div>
     <div class="avail-btn-wrap"><a href="https://newtype3104-byte.github.io/enchante-hair/" class="avail-btn">すべて見る →</a></div>
     <p style="font-size:11px;color:rgba(100,100,100,.6);text-align:center;margin-top:8px;padding:0 16px;line-height:1.6">※5分ごとに自動更新。表示と実際の空き状況に若干のズレが生じる場合があります。</p>
+    </div>
   </div>
 </section>
 
@@ -959,6 +963,9 @@ loadAvailability();
     if (poster) poster.style.display = 'none';
   }, { once: true });
 })();
+document.getElementById('availToggle').addEventListener('click', function() {
+  document.querySelector('.hero-avail').classList.toggle('avail-open');
+});
 </script>
 </body>
 </html>
