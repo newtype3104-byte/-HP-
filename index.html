@@ -217,6 +217,10 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .ig-item{position:relative;aspect-ratio:1;overflow:hidden;border-radius:6px;cursor:pointer}
 .ig-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .ig-item:hover img{transform:scale(1.06)}
+.ig-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.35);opacity:0;transition:opacity .3s}
+.ig-item:hover::after{opacity:1}
+.ig-item .ig-expand{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;opacity:0;transition:opacity .3s;pointer-events:none}
+.ig-item:hover .ig-expand{opacity:1}
 .ig-follow{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:2rem}
 .ig-follow a{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);color:var(--text);padding:.65rem 1.8rem;border-radius:100px;font-size:.78rem;font-weight:500;letter-spacing:.05em;transition:all .2s}
 .ig-follow a:hover{border-color:var(--gold);color:var(--gold)}
@@ -498,12 +502,12 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
   <div class="container">
     <div class="fi" style="text-align:center;margin-bottom:.5rem"><p class="section-label">Style Gallery</p><h2 class="section-title">Instagram</h2><p class="section-title-jp">施術スタイル・Before / After</p></div>
     <div class="ig-grid fi">
-      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_3107.JPG" alt="Style 1" loading="lazy"></div>
-      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6161.jpeg" alt="Style 2" loading="lazy"></div>
-      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6166.jpeg" alt="Style 3" loading="lazy"></div>
-      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6167.jpeg" alt="Style 4" loading="lazy"></div>
-      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/7653EB9C-0B2C-4725-8218-2191DC05F00A.jpeg" alt="Style 5" loading="lazy"></div>
-      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/K20260405185420_ig.png" alt="Style 6" loading="lazy"></div>
+      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_3107.JPG" alt="Style 1" loading="lazy"><svg class="ig-expand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6161.jpeg" alt="Style 2" loading="lazy"><svg class="ig-expand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6166.jpeg" alt="Style 3" loading="lazy"><svg class="ig-expand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/IMG_6167.jpeg" alt="Style 4" loading="lazy"><svg class="ig-expand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/7653EB9C-0B2C-4725-8218-2191DC05F00A.jpeg" alt="Style 5" loading="lazy"><svg class="ig-expand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="ig-item"><img src="https://newtype3104-byte.github.io/-HP-/K20260405185420_ig.png" alt="Style 6" loading="lazy"><svg class="ig-expand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
     </div>
     <div class="ig-follow fi fi-d1"><a href="https://www.instagram.com/enchante___hair/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@enchante___hair をフォロー</a></div>
   </div>
