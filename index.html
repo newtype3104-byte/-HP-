@@ -390,14 +390,43 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 }
 
 /* ═══════════ ACCESS ═══════════ */
-.access{background:var(--cream)}
-.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.access-info dt{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-top:1.2rem}
-.access-info dt:first-child{margin-top:0}
-.access-info dd{font-size:.82rem;color:var(--text);line-height:1.8;margin-top:.3rem}
-.access-map{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--border)}
-.access-map iframe{width:100%;height:100%;border:none}
-@media(max-width:600px){.access-grid{grid-template-columns:1fr}}
+.access{background:#0f111a}
+.access .section-label{color:var(--gold-light)}
+.access .section-title{color:#fff}
+.access .section-title-jp{color:rgba(232,224,208,.5);margin-bottom:0}
+.access .gold-line{background:var(--gold-light)}
+/* Info Cards */
+.ac-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.ac-info-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,169,110,.15);border-radius:10px;padding:1.2rem}
+.ac-card-label{font-family:'Cinzel',serif;color:var(--gold-light);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.7rem}
+.ac-info-card p{font-size:.82rem;line-height:1.9;color:rgba(232,224,208,.8)}
+.ac-info-card a{color:var(--gold-light)}
+/* Map */
+.ac-map-wrap{border-radius:10px;overflow:hidden;border:1px solid rgba(201,169,110,.15);margin-bottom:1rem}
+.ac-map-wrap iframe{width:100%;height:340px;border:0;display:block}
+.ac-map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;border:1px solid var(--gold-light);border-radius:8px;color:var(--gold-light);font-size:.8rem;transition:all .3s}
+.ac-map-btn:hover{background:var(--gold-light);color:#0f111a}
+/* Route Guide */
+.ac-route-title{font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.1em;color:#fff;margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.ac-route-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,169,110,.3),transparent)}
+.ac-steps{display:flex;flex-direction:column;gap:0;position:relative;padding-left:2rem;margin-bottom:2.5rem}
+.ac-steps::before{content:'';position:absolute;left:15px;top:16px;bottom:16px;width:2px;background:linear-gradient(180deg,var(--gold-light),rgba(201,169,110,.15))}
+.ac-step{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;padding:1rem 0}
+.ac-step-num{width:32px;height:32px;border-radius:50%;background:var(--gold-light);color:#0f111a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;position:relative;z-index:2;margin-left:-2rem;flex-shrink:0}
+.ac-step-label{font-size:.9rem;font-weight:500;color:#fff;margin-bottom:.25rem}
+.ac-step-desc{font-size:.75rem;color:rgba(232,224,208,.5);margin-bottom:.6rem}
+.ac-step-img{width:100%;max-width:480px;border-radius:8px;border:1px solid rgba(201,169,110,.12);aspect-ratio:4/3;object-fit:cover}
+/* Parking */
+.ac-parking{padding:1.5rem;background:rgba(201,169,110,.04);border:1px solid rgba(201,169,110,.15);border-radius:12px}
+.ac-parking-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center}
+.ac-parking-info{font-size:.82rem;line-height:2;color:rgba(232,224,208,.8)}
+.ac-parking-info strong{color:var(--gold-light)}
+.ac-parking-img{width:100%;border-radius:8px;border:1px solid rgba(201,169,110,.12)}
+@media(max-width:600px){
+  .ac-info-grid{grid-template-columns:1fr}
+  .ac-parking-grid{grid-template-columns:1fr}
+  .ac-steps{padding-left:1.8rem}
+}
 
 /* ═══════════ FOOTER CTA (chalk) ═══════════ */
 .footer-cta{background:var(--chalk);text-align:center;padding:4rem 1.5rem}
@@ -655,28 +684,81 @@ footer{background:var(--chalk);border-top:1px solid var(--border-dark);padding:2
   <div class="container">
     <div class="fi" style="margin-bottom:2.5rem">
       <p class="section-label">Access</p>
-      <h2 class="section-title">アクセス</h2>
-      <div class="gold-line"></div>
+      <h2 class="section-title on-dark">アクセス・店舗情報</h2>
+      <p class="section-title-jp">JR千代川駅 西口から徒歩3分</p>
+      <div class="gold-line" style="margin-top:.8rem"></div>
     </div>
-    <div class="access-grid">
-      <dl class="access-info fi">
-        <dt>Shop</dt>
-        <dd>Enchanté Hair</dd>
-        <dt>Address</dt>
-        <dd>〒621-0051<br>京都府亀岡市千代川町今津1-16-5</dd>
-        <dt>Tel</dt>
-        <dd><a href="tel:0771245339" style="color:inherit;text-decoration:none">0771-24-5339</a></dd>
-        <dt>Hours</dt>
-        <dd>平日 10:00〜21:00<br>土日祝 8:00〜18:00</dd>
-        <dt>Closed</dt>
-        <dd>毎週月曜日、第2・第3火曜日<br><span style="font-size:.75em;color:var(--text-dim)">※5週ある月は第4火曜日も休み</span></dd>
-        <dt>Station</dt>
-        <dd>JR千代川駅 西口から徒歩3分</dd>
-        <dt>Parking</dt>
-        <dd>店舗前に専用駐車場あり<br>近くにもう1台（看板がある場所のみ）</dd>
-      </dl>
-      <div class="access-map fi fi-d1">
-        <iframe src="https://maps.google.com/maps?q=Enchante+Hair+亀岡&output=embed&hl=ja&z=16" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- Shop Info Cards -->
+    <div class="ac-info-grid">
+      <div class="ac-info-card fi">
+        <h3 class="ac-card-label">Shop Info</h3>
+        <p>〒621-0051<br>京都府亀岡市千代川町今津1丁目16-5<br>TEL: <a href="tel:0771245339">0771-24-5339</a></p>
+      </div>
+      <div class="ac-info-card fi fi-d1">
+        <h3 class="ac-card-label">Business Hours</h3>
+        <p>水〜金｜10:00 - 21:00（最終受付）<br>土日祝｜8:00 - 18:00<br>定休日｜月曜・第2第3火曜日<br><span style="font-size:.75em;opacity:.6">※5週ある月は第4火曜も休み</span></p>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="ac-map-wrap fi fi-d2">
+      <iframe src="https://www.google.com/maps?q=35.0477575,135.547241&z=16&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="fi fi-d3" style="margin-bottom:3rem">
+      <a class="ac-map-btn" href="https://www.google.com/maps/dir/JR%E5%8D%83%E4%BB%A3%E5%B7%9D%E9%A7%85/35.0477575,135.547241/@35.047,135.547,16z/data=!3e2" target="_blank" rel="noopener">🚶 Googleマップで徒歩ルートを見る →</a>
+    </div>
+
+    <!-- Route Guide -->
+    <div class="ac-route-title fi fi-d4">駅からの道順</div>
+    <div class="ac-steps">
+      <div class="ac-step fi fi-d5">
+        <div class="ac-step-num">1</div>
+        <div class="ac-step-body">
+          <div class="ac-step-label">JR千代川駅 西口を出る</div>
+          <div class="ac-step-desc">改札を出たら左（西口）へ。駅舎の階段を降ります。</div>
+          <img class="ac-step-img" src="IMG_6346.jpeg" alt="JR千代川駅 西口" loading="lazy">
+        </div>
+      </div>
+      <div class="ac-step fi fi-d5">
+        <div class="ac-step-num">2</div>
+        <div class="ac-step-body">
+          <div class="ac-step-label">駅前の通りをまっすぐ進む</div>
+          <div class="ac-step-desc">正面の道をそのまま直進します。</div>
+          <img class="ac-step-img" src="IMG_6351.jpeg" alt="駅前の通り" loading="lazy">
+        </div>
+      </div>
+      <div class="ac-step fi fi-d5">
+        <div class="ac-step-num">3</div>
+        <div class="ac-step-body">
+          <div class="ac-step-label">横断歩道を渡って左へ</div>
+          <div class="ac-step-desc">横断歩道を渡ったら左に曲がります。</div>
+          <img class="ac-step-img" src="IMG_6345.jpeg" alt="横断歩道" loading="lazy">
+        </div>
+      </div>
+      <div class="ac-step fi fi-d5">
+        <div class="ac-step-num">4</div>
+        <div class="ac-step-body">
+          <div class="ac-step-label">右手にアンシャンテヘアーが見える</div>
+          <div class="ac-step-desc">手前右手の看板がある所が第2駐車場です。</div>
+          <img class="ac-step-img" src="IMG_6344.jpeg" alt="店舗外観・駐車場" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Parking -->
+    <div class="ac-parking fi fi-d6">
+      <div class="ac-route-title" style="margin-bottom:1rem">駐車場</div>
+      <div class="ac-parking-grid">
+        <div class="ac-parking-info">
+          <strong>第1駐車場</strong>（店舗横）<br>
+          普通車 2台 ＋ 軽自動車 1台<br><br>
+          <strong>第2駐車場</strong><br>
+          店舗近く・看板がある場所のみ
+        </div>
+        <div>
+          <img class="ac-parking-img" src="IMG_6341.jpeg" alt="第2駐車場看板" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
